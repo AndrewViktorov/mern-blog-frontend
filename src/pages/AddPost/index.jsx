@@ -114,7 +114,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
           </Button>
-          <img className={styles.image} src={`${ENDPOINT.host}}${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`${ENDPOINT.host}${imageUrl}`} alt="Uploaded" />
         </>
 
       )}
