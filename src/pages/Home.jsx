@@ -3,11 +3,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { Post } from '../components/Post';
 import { TagsBlock } from '../components/TagsBlock';
 import { CommentsBlock } from '../components/CommentsBlock';
 import { fetchPosts, fetchTags } from '../redux/slices/posts';
+import { ENDPOINT } from '../urls'
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ export const Home = () => {
               <Post
                 id={obj._id}
                 title={obj.title}
-                imageUrl={obj.imageUrl ? `process.env.REACT_APP_API_URL${obj.imageUrl}` : ''}
+                imageUrl={obj.imageUrl ? `${ENDPOINT.host}${obj.imageUrl}` : ''}
                 user={obj.user}
                 createdAt={obj.createdAt}
                 viewsCount={obj.viewsCount}

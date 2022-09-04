@@ -5,6 +5,7 @@ import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
 import ReactMarkdown from "react-markdown";
+import { ENDPOINT } from '../urls'
 
 export const FullPost = () => {
 
@@ -36,7 +37,7 @@ export const FullPost = () => {
       <Post
         id={data._id}
         title={data.title}
-        imageUrl={data.imageUrl ? `process.env.REACT_APP_API_URL${data.imageUrl}` : ''}
+        imageUrl={data.imageUrl ? `${ENDPOINT.host}${data.imageUrl}` : ''}
         user={data.user}
         createdAt={data.createdAt}
         viewsCount={data.viewsCount}

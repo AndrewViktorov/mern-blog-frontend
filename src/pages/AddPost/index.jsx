@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuth, selectIsAuth, } from "../../redux/slices/auth";
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import axios from '../../axios';
-
+import { ENDPOINT } from '../../urls'
 import 'easymde/dist/easymde.min.css';
 import styles from './AddPost.module.scss';
 
@@ -114,7 +114,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
           </Button>
-          <img className={styles.image} src={`process.env.REACT_APP_API_URL${imageUrl}`} alt="Uploaded" />
+          <img className={styles.image} src={`${ENDPOINT.host}}${imageUrl}`} alt="Uploaded" />
         </>
 
       )}
